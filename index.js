@@ -191,11 +191,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var lazyLinks = [].slice.call(document.querySelectorAll('a.lazy'));
         if (active === false) {
             active = true;
-            console.log(lazyLinks);
             setTimeout(function () {
                 lazyLinks.forEach(function (lazyLinks) {
                     if ((lazyLinks.getBoundingClientRect().top <= window.innerHeight && lazyLinks.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyLinks).display !== "none") {
-                        console.log(lazyLinks);
                         makeReportPreview(lazyLinks);
                         lazyLinks.classList.remove('lazy');
 
